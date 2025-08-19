@@ -11,7 +11,6 @@ from langchain.chains import create_retrieval_chain
 from langchain_community.vectorstores.faiss import FAISS
 
 from langchain_community.document_loaders import PyPDFDirectoryLoader
-import openai
 os.chdir('/Users/nizam/Desktop/Agentic_udemy/mayank/AgenticAI/AutogenCrashCourse/e12AutogenProjects/nizam')
 from dotenv import load_dotenv
 load_dotenv()
