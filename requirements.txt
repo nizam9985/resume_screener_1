@@ -1,3 +1,4 @@
+langchain-groq
 langchain_groq
 langchain
 langchain_community
