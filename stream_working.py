@@ -4,14 +4,13 @@ import os
 from langchain_groq import ChatGroq
 #from langchain_community.embeddings import OllamaEmbeddings
 #from langchain_ollama import OllamaEmbeddings
-from langchain.embeddings import GroqEmbeddings
 
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
-
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores.faiss import FAISS
 
 from langchain_community.document_loaders import PyPDFDirectoryLoader
@@ -27,9 +26,9 @@ os.environ['GROQ_API_KEY']=os.getenv("GROQ_API_KEY")
 groq_api_key=os.getenv("GROQ_API_KEY")
 
 
-embeddings = GroqEmbeddings(
-    api_key=groq_api_key,
-    model="text-embedding-model"  )
+
+embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
 
 llm=ChatGroq(groq_api_key=groq_api_key,model_name="Llama3-8b-8192")
 
