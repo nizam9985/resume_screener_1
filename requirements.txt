@@ -7,3 +7,5 @@ python-dotenv
 streamlit
 pypdf
 langchain-ollama
+sentence-transformers
+faiss-cpu
