@@ -18,8 +18,8 @@ from langchain_community.document_loaders import PyPDFDirectoryLoader
 from pypdf import PdfReader
 
 #os.chdir('/Users/nizam/Desktop/Agentic_udemy/mayank/AgenticAI/AutogenCrashCourse/e12AutogenProjects/nizam')
-from dotenv import load_dotenv
-load_dotenv()
+#from dotenv import load_dotenv
+#load_dotenv()
 ## load the GROQ API Key
 #os.environ['OPENAI_API_KEY']=os.getenv("OPENAI_API_KEY")
 os.environ['GROQ_API_KEY']=os.getenv("GROQ_API_KEY")
@@ -29,8 +29,7 @@ groq_api_key=os.getenv("GROQ_API_KEY")
 
 embeddings = GroqEmbeddings(
     api_key=groq_api_key,
-    model="text-embedding-model"
-)
+    model="text-embedding-model"  )
 
 llm=ChatGroq(groq_api_key=groq_api_key,model_name="Llama3-8b-8192")
 
@@ -60,7 +59,7 @@ def create_vector_embedding():
 
 #FAISS.from_texts(context, OllamaEmbeddings(model='nomic-embed-text'))
 
-st.title("RAG Document Q&A With Groq And Lama3")
+st.title("resume screener with Groq")
 
 user_prompt=st.text_input("Enter your query for resume screening")
 
